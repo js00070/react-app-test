@@ -65,18 +65,19 @@ function SimpleBlock(props) {
     fontSize: 60,
     bColor: "#F0F8FF"
   }
+  
   if (props.num >= 100 && props.num <= 999) newState.fontSize = 50
   if (props.num >= 1000 && props.num <= 9999) newState.fontSize = 40
   newState.bColor = colorTable.get(props.num)
   return (
-    <div className="SimpleBlock" style={{ fontSize: newState.fontSize, backgroundColor: newState.bColor }}>
-      {props.num}
+    <div className="SimpleBlock" style={{ fontSize: newState.fontSize,
+    backgroundColor: newState.bColor}}>
+       {props.num != 0 ? props.num : ""}
     </div>
   )
 }
 
 class NumberTable extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
