@@ -272,12 +272,14 @@ class NumberTable extends Component {
           <Col span={6}><SimpleBlock num={this.state.numTab[3][3]} /></Col>
         </Row>
         <h1>Score = {this.state.score}</h1>
+        <div><Icon type="arrow-up" onClick={this.handleClick(-1, 0).bind(this)} /></div>
         <div>
-          <Icon type="left" onClick={this.handleClick(0, -1).bind(this)} />
-          <Icon type="right" onClick={this.handleClick(0, 1).bind(this)} />
-          <Icon type="up" onClick={this.handleClick(-1, 0).bind(this)} />
-          <Icon type="down" onClick={this.handleClick(1, 0).bind(this)} />
+          <Icon type="arrow-left" onClick={this.handleClick(0, -1).bind(this)} />
+          <span>-----</span>
+          <Icon type="arrow-right" onClick={this.handleClick(0, 1).bind(this)} />
         </div>
+        <div><Icon type="arrow-down" onClick={this.handleClick(1, 0).bind(this)} /></div>
+        <div>________</div>
         <Button onClick={this.reset.bind(this)}>Reset</Button>
       </div>
     )
