@@ -35,7 +35,6 @@ class NumberBlock extends Component {
       console.log("setState!" + newState)
       return newState
     })
-
   }
 
   render() {
