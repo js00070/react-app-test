@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 import { Layout, Menu, Breadcrumb } from 'antd';
 
 import { NumberTable } from './NumberTable.js'
@@ -10,14 +10,14 @@ const {
 } = Layout
 
 
-const Index = () => (
-  <div>
+const Home = () => (
+  <div className="Home">
     <h2>主页</h2>
     <p>1781的小提琴的react测试页面</p>
   </div>
 )
 const About = () => (
-  <div>
+  <div className="About">
     <h2>关于</h2>
     <p>1781的小提琴的react测试页面</p>
   </div>
@@ -28,6 +28,11 @@ const Game = () => (
     <NumberTable />
   </div>
 )
+const NoMatch = () => (
+  <div className="NoMatch">
+    <h2>没有匹配的页面</h2>
+  </div>
+)
 
 const AppRouter = () => (
   <Router>
@@ -36,7 +41,7 @@ const AppRouter = () => (
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={[]}
           style={{ lineHeight: '64px' }}
         >
           <Menu.Item key='1'>
@@ -52,9 +57,13 @@ const AppRouter = () => (
       </Header>
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
         <div style={{ background: '#fff', padding: 24, minHeight: 670 }}>
-          <Route exact path="/" component={Index} />
-          <Route path="/about/" component={About} />
-          <Route path="/game/" component={Game} />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about/" exact component={About} />
+            <Route path="/game/" exact component={Game} />
+            <Redirect from="/*" to="/" />
+            <Route component={NoMatch} />
+          </Switch>
         </div>
 
       </Content>
