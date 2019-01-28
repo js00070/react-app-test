@@ -56,7 +56,7 @@ const AppRouter = () => (
         </Menu>
       </Header>
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
-        <div style={{ background: '#fff', padding: 24, minHeight: 670 }}>
+        <div style={{ background: '#fff', padding: 24, minHeight: 500 }}>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about/" exact component={About} />
@@ -65,9 +65,7 @@ const AppRouter = () => (
             <Route component={NoMatch} />
           </Switch>
         </div>
-
       </Content>
-      <Footer style={{ textAlign: 'center', bottom: 0, left: 0, right: 0 }}>Footer</Footer>
     </Layout>
   </Router>
 );
