@@ -120,10 +120,10 @@ class NumberTable extends Component {
             const emptyBlockIndex = Math.round(Math.random() * (emptyBlockList.length - 1))
             const [x, y] = emptyBlockList[emptyBlockIndex]
             const newNumTab = state.numTab.map(x => x.slice())
-            newNumTab[x][y] = 2
+            newNumTab[x][y] = Math.random() > 0.8 ? 4 : 2
             return {
                 numTab: newNumTab,
-                score: state.score + 2
+                score: state.score + newNumTab[x][y]
             }
         })
     }
