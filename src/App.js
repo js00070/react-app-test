@@ -40,7 +40,7 @@ const AppRouter = () => (
           style={{ lineHeight: '64px' }}
         >
           <Menu.Item key='1'>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </Menu.Item>
           <Menu.Item key='2'>
             <Link to="/about/">About</Link>
@@ -52,7 +52,7 @@ const AppRouter = () => (
       </Header>
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
         <div style={{ background: '#fff', padding: 24, minHeight: 670 }}>
-          <Route path="/home/" component={Index} />
+          <Route exact path="/" component={Index} />
           <Route path="/about/" component={About} />
           <Route path="/game/" component={Game} />
         </div>
