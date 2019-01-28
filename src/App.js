@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 
 import { NumberTable } from './NumberTable.js'
 import './App.css';
+
+const SubMenu = Menu.SubMenu;
 
 const {
   Header, Footer, Sider, Content,
@@ -50,9 +52,14 @@ const AppRouter = () => (
           <Menu.Item key='2'>
             <Link to="/about/">About</Link>
           </Menu.Item>
-          <Menu.Item key='3'>
-            <Link to="/game/">Game</Link>
-          </Menu.Item>
+          <SubMenu title={<span> Game </span>}>
+            <Menu.Item key="3">
+              <Link to="/2048/">2048</Link>
+            </Menu.Item>
+            <Menu.Item key="4">
+              <Link to="/game/">RussionBlock</Link>
+            </Menu.Item>
+          </SubMenu>
         </Menu>
       </Header>
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
@@ -60,7 +67,7 @@ const AppRouter = () => (
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about/" exact component={About} />
-            <Route path="/game/" exact component={Game} />
+            <Route path="/2048/" exact component={Game} />
             <Redirect from="/*" to="/" />
             <Route component={NoMatch} />
           </Switch>
