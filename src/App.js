@@ -4,13 +4,14 @@ import { Layout, Menu } from 'antd';
 
 import { NumberTable } from './NumberTable.js'
 import './App.css';
+import { RussionBlock } from './RussionBlock.js'
+import { FiveChess } from './FiveChess.js'
 
 const SubMenu = Menu.SubMenu;
 
 const {
   Header, Footer, Sider, Content,
 } = Layout
-
 
 const Home = () => (
   <div className="Home">
@@ -24,8 +25,8 @@ const About = () => (
     <p>1781的小提琴的react测试页面</p>
   </div>
 )
-const Game = () => (
-  <div className="Game">
+const Game_2048 = () => (
+  <div className="Game_2048">
     <h1>2048 Game</h1>
     <NumberTable />
   </div>
@@ -57,7 +58,10 @@ const AppRouter = () => (
               <Link to="/2048/">2048</Link>
             </Menu.Item>
             <Menu.Item key="4">
-              <Link to="/game/">RussionBlock</Link>
+              <Link to="/russionblock/">RussionBlock</Link>
+            </Menu.Item>
+            <Menu.Item key="5">
+              <Link to="/fivechess/">FiveChess</Link>
             </Menu.Item>
           </SubMenu>
         </Menu>
@@ -67,7 +71,9 @@ const AppRouter = () => (
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about/" exact component={About} />
-            <Route path="/2048/" exact component={Game} />
+            <Route path="/2048/" exact component={Game_2048} />
+            <Route path="/russionblock/" exact component={RussionBlock} />
+            <Route path="/fivechess/" exact component={FiveChess} />
             <Redirect from="/*" to="/" />
             <Route component={NoMatch} />
           </Switch>

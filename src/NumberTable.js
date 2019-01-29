@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, List, Row, Col, Icon } from 'antd';
-import { BrowserRouter, Route, Link } from "react-router-dom";
 import './App.css';
 
 // 无效，function和class的区别有待研究
