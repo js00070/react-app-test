@@ -1,5 +1,5 @@
 // 引入WebSocket模块
-const ws = require('nodejs-websocket')
+const wss = require('nodejs-websocket')
 const PORT = 80
  
 const sessionMap = new Map()
@@ -26,7 +26,7 @@ function orderHandler(msg) {
 }
 
 // on就是addListener，添加一个监听事件调用回调函数
-const server = ws.createServer(function(conn){
+const server = wss.createServer(function(conn){
     console.log('New connection')
     
     conn.on("text",function(str){
