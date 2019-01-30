@@ -27,3 +27,18 @@
   height: width;
   display: inline-block;
 }
+
+.ChessTable {
+  width: 600px;
+  height: width;
+  display: inline-block;
+}
+
+.ChessBlock {
+  display: table-cell;
+  text-align: center;
+  vertical-align:middle;
+  width: 25px;
+  height: 25px;
+  border: 1px solid royalblue;
+}
